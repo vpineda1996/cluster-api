@@ -143,3 +143,8 @@ func Convert_v1beta1_JoinConfiguration_To_v1alpha4_JoinConfiguration(in *bootstr
 	// InitConfiguration.Patches does not exist in kubeadm v1alpha4 API.
 	return autoConvert_v1beta1_JoinConfiguration_To_v1alpha4_JoinConfiguration(in, out, s)
 }
+
+func Convert_v1beta1_ClusterConfiguration_To_v1alpha4_ClusterConfiguration(in *bootstrapv1.ClusterConfiguration, out *ClusterConfiguration, s apiconversion.Scope) error {
+	// ClusterConfiguration.BottlerocketCustomHostContainers exists in bootstrapv1.ClusterConfiguration but not in v1alpha4
+	return autoConvert_v1beta1_ClusterConfiguration_To_v1alpha4_ClusterConfiguration(in, out, s)
+}
